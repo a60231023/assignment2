@@ -1,12 +1,15 @@
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'f6759fe06emsh29aeaaf4dd52f9ap195b63jsnfaec6f199925',
-		'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
-	}
-};
+const jokeinput = document.getElementById("joke");
 
-fetch('https://dad-jokes.p.rapidapi.com/random/joke', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+const apicall = async () => {
+  const val = await fetch("https://v2.jokeapi.dev/joke/Any?type=single");
+  console.log(val);
+  const first = await val.json();
+  console.log(first);
+  const joke = first.joke;
+  console.log(joke);
+  jokeinput.innerText = joke;
+  console.log("button clicked");
+};
+const btn = document.getElementById("jokeBtn");
+console.log(btn);
+btn.addEventListener("click", apicall);

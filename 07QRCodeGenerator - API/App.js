@@ -9,7 +9,7 @@ qrGeneratorBtn.addEventListener("click", () => {
   }
   qrCode.addEventListener("load", () => {
     qrGeneratorBtn.innerHTML = "Generate QR Code";
-    qrCode.hidden = false;
+    qrCode.hidden = true;
     const downloadImg = document.createElement("a");
     downloadImg.style.display = "block";
     downloadImg.setAttribute(

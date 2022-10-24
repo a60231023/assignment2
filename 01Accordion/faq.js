@@ -96,7 +96,7 @@ const faqData = [
   
   function btnStatusUpdate() {
         const plusBtn = document.querySelectorAll(".show_btn");
-        // console.log(plusBtn);
+        console.log(plusBtn);
         plusBtn.forEach((btn, i) =>{
           btn.addEventListener("click", ()=>{
             showFaq(btn,i);
